@@ -1,0 +1,18 @@
+version: "3.7"
+services:
+  api_service:
+    build: .
+    restart: always
+    ports:
+      - "9090:9090"
+    depends_on:
+      - pgsql_db
+  pgsql_db:
+    image: postgis/postgis
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: taxi
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: zxc666

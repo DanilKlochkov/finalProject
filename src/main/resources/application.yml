@@ -1,0 +1,16 @@
+server:
+  port: 9090
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/taxi
+    username: postgres
+    password: zxc666
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.spatial.dialect.postgis.PostgisDialect
+    show-sql: true
